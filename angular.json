@@ -5,7 +5,12 @@
   "projects": {
     "tik-talk": {
       "projectType": "application",
-      "schematics": {},
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss",
+          "skipTests": true
+        }
+      },
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
@@ -24,10 +29,16 @@
               {
                 "glob": "**/*",
                 "input": "public"
+              },
+              {
+                "glob": "**/*",
+                "input": "public/assets/fonts",
+                "output": "assets/fonts"
               }
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.scss",
+              "src/fonts.scss"
             ],
             "scripts": []
           },
@@ -82,15 +93,24 @@
               {
                 "glob": "**/*",
                 "input": "public"
+              },
+              {
+                "glob": "**/*",
+                "input": "public/assets/fonts",
+                "output": "assets/fonts"
               }
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.scss",
+              "src/fonts.scss"
             ],
             "scripts": []
           }
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "423cd537-5205-48c7-a213-218cd5fcd675"
   }
 }
